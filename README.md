@@ -1,130 +1,79 @@
-# EsewSub
+# Esewsub Framework 
 
-> A professional and powerful WhatsApp bot framework built on Baileys.
+<p align="center">
+  <img src="https://i.postimg.cc/PxcS6SvT/d7e8080a5326b0d93e36d85d4a897f8d.jpg" alt="Thumbnail" />
+</p>
 
-[![npm version](https://badge.fury.io/js/EsewSub.svg)](https://badge.fury.io/js/EsewSub)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+A professional and powerful WhatsApp bot framework built on Baileys. Create sophisticated bots with ease - just initialize the bot, define your message handlers and routes, and you're ready to go. Features built-in keyboard system, message parsing, middleware support, and comprehensive event handling for building production-ready WhatsApp bots.
 
-## ✨ Features
+---
 
-- 🤖 Single bot (`EsewBot`) and multi-bot (`SubBots`) support
-- 🔐 Pairing code authentication (no QR needed)
-- 💾 Persistent session storage with LevelDB
-- 🔄 Auto-reconnect on disconnect
-- 📡 Event-driven architecture
-- 📋 Built-in command routing, middleware, and permissions
-- 🌐 ESM + CJS dual format
+### Main Features and Advantages
 
-## 📦 Installation
+- Continuous maintenance by developers – Regular updates, bug fixes, and long-term support.
+- Complete bot foundation in one framework – Everything you need to start is already built-in.
+- Very easy to use and modify – Clean structure, well-commented code, and minimal learning curve.
+- Very fast with extremely low resource consumption – Optimized for performance and runs smoothly on weak hardware.
+- Integrated and smart command system – Auto-detects prefixes, arguments, mentions, and reply contexts.
+- Automatic and default cleanup – Manages temporary files, cached data, and memory automatically.
+- No credits required – the entire bot foundation is yours – 100% free from forced branding or hidden attribution.
+
+---
+
+## Installation
 
 ```bash
-npm install esewsub
-# or
-npm install github:moreand458-eng/esewsub
+npm install moreand458-eng/esewsub
 ```
 
-## 🚀 Quick Start — Single Bot
+## Quick Start
 
-```js
-import { EsewBot } from 'esewsub';
+```javascript
+import { Client } from 'esewsub';
 
-const bot = new EsewBot({
-  number: '201012345678',
-  prefix: ['.', '!'],
-  owners: ['201012345678'],
-  pairingCode: 'ESCANOR1'
+const bot = new Client({
+  phoneNumber: "20123456789",
+  prefix: ["!", "."],
+  owners: ["1234567890@s.whatsapp.net"]
 });
 
-bot.on('pair', (code) => console.log('Pairing code:', code));
-bot.on('ready', (sock) => console.log('Bot connected!'));
-
-// Register a command
-bot.registerCommand(['ping', 'سرعة'], async (ctx) => {
-  await ctx.reply('🏓 Pong!');
-});
-
-bot.start();
+await bot.start();
 ```
 
-## 🤖 SubBots — Multiple Bots
 
-```js
-import { SubBots } from 'esewsub';
+### Contact Developer
 
-SubBots.pariCode('ESCANOR1');
+For questions, support, or collaboration, feel free to contact the developer:
 
-const subBots = new SubBots();
+- **Owner**: [Owner Contact](https://wa.me/201092178171)
+- **Channel WhatsApp**: [Channel WhatsApp](https://whatsapp.com/channel/0029VbBbvWcJ3jv1T55BmR0f) 
 
-await subBots.setConfig({
-  owners: ['201012345678'],
-  prefix: '.',
-  printQR: false
-});
+### 🙌 Contributors
 
-// Add a new sub-bot
-const uid = await subBots.add('201087654321');
+Thanks to the following awesome contributors who help improve this project 💖
 
-subBots.on('pair', (uid, code) => {
-  console.log(`SubBot ${uid} pairing code: ${code}`);
-});
-
-subBots.on('ready', (uid, sock) => {
-  console.log(`SubBot ${uid} connected!`);
-});
-
-subBots.on('message', (uid, msg, sock) => {
-  // Handle messages
-});
-
-await subBots.load(); // Load saved bots
-```
-
-## 📚 API Reference
-
-### EsewBot
-
-| Method | Description |
-|--------|-------------|
-| `new EsewBot(config)` | Create a new bot instance |
-| `bot.start()` | Connect to WhatsApp |
-| `bot.registerCommand(names, handler, meta)` | Register a command |
-| `bot.on(event, handler)` | Listen to events |
-
-### SubBots
-
-| Method | Description |
-|--------|-------------|
-| `new SubBots(commandSystem?)` | Create SubBots manager |
-| `SubBots.pariCode(code)` | Set default pairing code |
-| `subBots.setConfig(config)` | Set configuration |
-| `subBots.add(number)` | Add a new sub-bot |
-| `subBots.remove(uid)` | Remove a sub-bot |
-| `subBots.load()` | Load saved bots |
-| `subBots.get(uid)` | Get a bot instance |
-| `subBots.getAll()` | Get all bot instances |
-
-### MessageContext (ctx)
-
-| Property | Description |
-|----------|-------------|
-| `ctx.sock` | Baileys socket |
-| `ctx.msg` | Raw message |
-| `ctx.sender` | Sender JID |
-| `ctx.chat` | Chat JID |
-| `ctx.isGroup` | Is group chat |
-| `ctx.body` | Message text |
-| `ctx.command` | Parsed command |
-| `ctx.args` | Command arguments |
-| `ctx.text` | Arguments as string |
-| `ctx.isOwner` | Is owner |
-| `ctx.isAdmin` | Is group admin |
-| `ctx.reply(text)` | Send reply |
-| `ctx.react(emoji)` | React to message |
-
-## 👨‍💻 Author
-
-**Escanor** — [GitHub](https://github.com/moreand458-eng)
-
-## 📜 License
-
-MIT — © Escanor
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/moreand458-eng">
+        <img src="https://github.com/moreand458-eng.png" width="80px;" style="border-radius:50%;" alt="Developer"/>
+        <br />
+        <sub><b>abdo</b></sub>
+      </a>
+    </td>
+<td align="center">
+      <a href="https://github.com/moreand458-eng">
+        <img src="https://github.com/moreand458-eng.png" width="80px;" style="border-radius:50%;" alt="Contributor"/>
+        <br />
+        <sub><b>escanor</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/moreand458-eng">
+        <img src="https://github.com/moreand458-eng.png" width="80px;" style="border-radius:50%;" alt="Contributor"/>
+        <br />
+        <sub><b>escanor</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>

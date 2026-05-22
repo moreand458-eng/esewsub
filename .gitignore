@@ -1,6 +1,24 @@
+# Dependencies
 node_modules/
-dist/
-*.log
+
+# Environment
 .env
-sessions/
-sub_db/
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temp
+*.tmp
+.cache/
+coverage/

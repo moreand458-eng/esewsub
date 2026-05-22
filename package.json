@@ -1,10 +1,10 @@
 {
-  "name": "esewsub",
-  "version": "2.0.0",
+  "name": "Esewsub",
+  "version": "1.0.2",
   "description": "A professional and powerful WhatsApp bot framework built on Baileys. Create sophisticated bots with ease - just initialize the bot, define your message handlers and routes, and you're ready to go. Features built-in keyboard system, message parsing, middleware support, and comprehensive event handling for building production-ready WhatsApp bots.",
   "license": "MIT",
   "author": {
-    "name": "Escanor",
+    "name": "ESCANOR abdo",
     "url": "https://github.com/moreand458-eng"
   },
   "repository": {
@@ -19,14 +19,12 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "README.md"
+    "dist"
   ],
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
+        "types": "./dist/index.d.ts",
         "default": "./dist/index.mjs"
       },
       "require": {
@@ -44,8 +42,8 @@
   "keywords": [
     "whatsapp",
     "bot",
-    "EsewSub",
-    "esewsub",
+    "MeowSub",
+    "meowsub",
     "baileys",
     "whatsapp-bot",
     "chatbot",
